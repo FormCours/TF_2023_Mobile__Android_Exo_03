@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Exo03</string>
+    <string name="title_main">Exo 03\nPersistance</string>
+    <string name="label_create_note">Créer une note :</string>
+    <string name="btn_create">Créer</string>
+    <string name="label_list_note">Liste des notes :</string>
+    <string name="label_note_title">Note :</string>
+    <string name="btn_save">Sauvegarder</string>
+    <string name="btn_cancel">Annuler</string>
+</resources>
