@@ -8,10 +8,12 @@ import android.os.Bundle
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import be.tftic.web2023.exo03.adapters.FileNoteAdapter
 import be.tftic.web2023.exo03.databinding.ActivityMainBinding
 import be.tftic.web2023.exo03.models.FileNote
+import be.tftic.web2023.exo03.tools.SwipeTool
 import java.io.File
 import java.time.Instant
 import java.time.LocalDateTime
@@ -51,6 +53,13 @@ class MainActivity : AppCompatActivity() {
         adapter.setOnFileNoteClickListener { fileNote ->
             openEditOnExistingFile(fileNote)
         }
+
+        // Swipe
+        val swipe = SwipeTool(this)
+        swipe.setOnSwipeLeftListener { position -> removeFileNote(position)}
+
+        val itemTouch = ItemTouchHelper(swipe)
+        itemTouch.attachToRecyclerView(binding.rvMainFiles)
     }
 
     override fun onStart() {
@@ -79,6 +88,15 @@ class MainActivity : AppCompatActivity() {
 
         return result.toList()
     }
+
+    private fun removeFileNote(position: Int) {
+        val fileName = fileNotes[position].fileName
+        this.deleteFile(fileName)
+
+        fileNotes.removeAt(position)
+        binding.rvMainFiles.adapter?.notifyItemRemoved(position)
+    }
+
 
     private fun openEditOnNewFile() {
         // Récuperation du nom du fichier à créer
