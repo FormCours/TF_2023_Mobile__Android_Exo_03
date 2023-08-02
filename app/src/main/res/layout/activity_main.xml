@@ -44,13 +44,15 @@
             android:layout_marginEnd="5dp"
             android:layout_below="@id/tv_main_create"
             android:backgroundTint="@color/black"
+            android:inputType="text"
+            android:imeOptions="actionDone"
             android:textColor="@color/pink"
             android:layout_alignParentStart="true"
-            android:layout_toStartOf="@id/btn_main_filenam_create"
+            android:layout_toStartOf="@id/btn_main_filename_create"
             />
 
         <Button
-            android:id="@+id/btn_main_filenam_create"
+            android:id="@+id/btn_main_filename_create"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_create"

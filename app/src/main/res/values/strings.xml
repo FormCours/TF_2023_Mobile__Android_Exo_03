@@ -7,4 +7,11 @@
     <string name="label_note_title">Note :</string>
     <string name="btn_save">Sauvegarder</string>
     <string name="btn_cancel">Annuler</string>
+    <string name="toast_file_save">Fichier sauvegardé</string>
+    <string name="dialog_exist_file">Le fichier exist déjà (╯°□°）╯︵ ┻━┻</string>
+    <string name="dialog_file_invalid">❌ Le nom du fichier est invalide</string>
+    <string name="format_date">dd/MM/yyyy - HH:mm</string>
+    <string name="dialog_lost_data_title">Perte de donnée détécté !</string>
+    <string name="dialog_lost_data_message">Les données modifiés seront perdu.\nVoulez vous continuez ?</string>
+    <string name="dialog_btn_save">Save</string>
 </resources>
